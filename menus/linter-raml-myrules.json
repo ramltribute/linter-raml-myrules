@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle linter-raml-myrules",
+        "command": "linter-raml-myrules:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "linter-raml-myrules",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "linter-raml-myrules:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

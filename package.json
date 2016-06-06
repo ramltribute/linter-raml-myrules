@@ -2,7 +2,7 @@
   "name": "linter-raml-myrules",
   "main": "./lib/linter-raml.js",
   "description": "New Linter for Atom editor (and console) that validates your RAML files and expandable with your own personal rules!",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/ramltribute/linter-raml-myrules",
   "license": "MIT",
   "keywords": [

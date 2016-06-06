@@ -12,7 +12,7 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "linter-raml-myrules",
+          "label": "Linter-RAML-myrules",
           "submenu": [
             {
               "label": "Toggle",

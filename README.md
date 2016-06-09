@@ -11,9 +11,9 @@ https://raml-org.github.io/raml-js-parser-2/modules/_src_index_.html.
 Check more examples in: 
 https://github.com/raml-org/raml-js-parser-2/blob/master/documentation/GettingStarted.md
 
-If api-workbench is installed in ATOM too, it checks npm require cache to use same parser as workbench, if its not installed, it uses raml-js-parser-2 that is defined in package.json. In order to customize the linter with new rules, it is required to create new callbacks.
+If api-workbench is installed in ATOM too, it checks npm require cache to use same parser as workbench, if its not installed, it uses raml-js-parser-2 that is defined in package.json (This is done because raml-js-parser-2 is not prepared to be required twice). In order to customize the linter with new rules, it is required to create new callbacks.
 
-Callback files are created in my-rules folder and default template. It receives the API parser from the parser, and return an array of errors that this callback generates. The error structure needed is:
+Callback files are created in my-rules folder. It receives the API parser from the parser, and return an array of errors that callback generates. The error structure needed is:
 
 ```
 {
@@ -27,5 +27,5 @@ start: position where error starts,
 };
 ```
 
-Also it has an auxiliary helper to resolve errors in RAML into ATOM using the parser.
+Also it has an auxiliary helper to resolve errors in RAML into ATOM using the parser, it is in my-rules/index.js.
 

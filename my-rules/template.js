@@ -1,7 +1,5 @@
 'use strict'
 
-var helper = require('../index.js');
-
 /* Error structure:
  {
  column: column where error starts,

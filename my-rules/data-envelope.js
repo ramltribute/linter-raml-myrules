@@ -1,7 +1,5 @@
 'use strict'
 
-var helper = require('../index.js');
-
 function rule(api){
     var errors = [];
     function processResponse(method){
@@ -13,7 +11,7 @@ function rule(api){
                 bodies.forEach(function(body){
                     body.properties().forEach(function(prop){
                         if(prop.name() !== 'data'){
-                            errors.push(helper.generateError(prop, 'data is the only envelope possible'));
+                            errors.push(generateError(prop, 'data is the only envelope possible'));
                         }
                     });
                 });
@@ -26,6 +24,21 @@ function rule(api){
         });
     });
     return errors;
+}
+
+function generateError(node, message){
+    var lowLevel = node.highLevel().lowLevel();
+    var lm = lowLevel.unit().lineMapper();
+    var starts = lm.position(lowLevel.keyStart());
+    var ends = lm.position(lowLevel.keyEnd());
+    return {
+        column: starts.column,
+        end: ends.position,
+        line: starts.line,
+        message: message,
+        path: 'api.raml',
+        range: [{column:starts.column,line:starts.line,position:starts.position},{column:ends.column,line:ends.line,position:ends.position}],
+        start: starts.position};
 }
 
 module.exports = rule;
